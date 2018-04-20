@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimary">
+
+    <RelativeLayout
+        android:id="@+id/title_bar"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:background="@color/title_bar_bg">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:paddingLeft="8dp"
+            android:text="@string/app_name"
+            android:textColor="@android:color/white"
+            android:textSize="20dp" />
+    </RelativeLayout>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/left_cards_recyclerview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/title_bar"
+        android:background="#87CEEB"
+        android:padding="1dp" />
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/history_recyclerview"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_above="@+id/keybord_view"
+        android:layout_below="@+id/left_cards_recyclerview"
+        android:paddingLeft="2dp" />
+
+    <ImageView
+        android:id="@+id/test"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_below="@+id/left_cards_recyclerview"
+        android:visibility="gone" />
+
+    <LinearLayout
+        android:id="@+id/keybord_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:orientation="vertical">
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#BFBFBF" />
+
+        <TextView
+            android:id="@+id/cache_tv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#FFFFFF"
+            android:gravity="center_vertical"
+            android:padding="5dp"
+            android:textColor="#2F2F2F"
+            android:textSize="24dp" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#BFBFBF" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:weightSum="6">
+
+            <GridView
+                android:id="@+id/gridview"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="5"
+                android:background="#BFBFBF"
+                android:horizontalSpacing="1dp"
+                android:numColumns="5"
+                android:verticalSpacing="1dp" />
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_below="@+id/cache_tv"
+                android:layout_weight="1"
+                android:background="#FFFFFF"
+                android:orientation="vertical"
+                android:weightSum="3">
+
+                <TextView
+                    android:id="@+id/key_back"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="回退"
+                    android:textColor="#000000"
+                    android:textSize="20dp" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#BFBFBF" />
+
+                <TextView
+                    android:id="@+id/key_discard"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="2"
+                    android:gravity="center"
+                    android:text="出牌"
+                    android:textColor="#000000"
+                    android:textSize="20dp" />
+
+            </LinearLayout>
+        </LinearLayout>
+
+    </LinearLayout>
+
+</RelativeLayout>
